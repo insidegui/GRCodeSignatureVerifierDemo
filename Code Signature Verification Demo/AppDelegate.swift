@@ -15,9 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusLabel: NSTextField!
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        statusLabel.textColor = NSColor.whiteColor()
-        statusLabel.font = NSFont.systemFontOfSize(24.0, weight: NSFontWeightThin)
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        statusLabel.textColor = NSColor.white
+        statusLabel.font = NSFont.systemFont(ofSize: 24.0, weight: NSFontWeightThin)
 
         GRCodeSignatureVerifier.sharedInstance().codeRequirements = "identifier = \"br.com.guilhermerambo.Code-Signature-Verification-Demo\""
         if GRCodeSignatureVerifier.sharedInstance().isSignatureValid {
@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
     
